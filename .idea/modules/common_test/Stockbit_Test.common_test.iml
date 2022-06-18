@@ -56,6 +56,8 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../common_test">
       <sourceFolder url="file://$MODULE_DIR$/../../../common_test/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../common_test/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../common_test/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../common_test/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../common_test/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../../common_test/.gradle" />

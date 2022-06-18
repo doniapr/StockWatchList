@@ -17,6 +17,6 @@ dependencies {
     implementation project(Modules.model)
     // TEST
     testImplementation TestLibraries.junit
-    testImplementation TestLibraries.koin
+//    testImplementation TestLibraries.koin
     testImplementation TestLibraries.mockWebServer
 }

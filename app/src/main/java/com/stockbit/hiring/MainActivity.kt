@@ -7,9 +7,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.stockbit.hiring.ui.viewmodel.LoginViewModel
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
 
+    private val loginViewModel : LoginViewModel by viewModel()
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 

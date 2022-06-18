@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.stockbit.common.base.BaseFragment
 import com.stockbit.common.base.BaseViewModel
-import com.stockbit.hiring.LoginViewModel
-import com.stockbit.hiring.R
+import com.stockbit.hiring.ui.viewmodel.LoginViewModel
 import com.stockbit.hiring.databinding.FragmentLoginBinding
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class LoginFragment : BaseFragment() {
-    val viewModel : LoginViewModel by viewModel()
+    private val viewModel : LoginViewModel by sharedViewModel()
+
     private lateinit var binding: FragmentLoginBinding
     override fun getViewModel(): BaseViewModel {
         return viewModel
@@ -24,5 +24,13 @@ class LoginFragment : BaseFragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnLogin.setOnClickListener {
+            viewModel.login(binding.edtUsername.text.toString())
+        }
     }
 }

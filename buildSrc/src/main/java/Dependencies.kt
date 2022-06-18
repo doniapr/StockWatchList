@@ -43,7 +43,7 @@ object Versions {
     val timber = "4.7.1"
     val lifecycle = "2.2.0"
     val nav = "2.0.0"
-    val room = "2.3.0"
+    val room = "2.4.2"
     val recyclerview = "1.0.0"
     val safeArgs = "1.1.1"
     val glide = "4.12.0"
