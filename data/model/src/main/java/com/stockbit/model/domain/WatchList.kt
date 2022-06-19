@@ -1,11 +1,9 @@
 package com.stockbit.model.domain
 
-import com.google.gson.annotations.SerializedName
-
 data class WatchList(
     val message: String,
     val type: Int,
-    val data: List<Data>,
+    val data: List<Data>?,
 )
 
 data class Data(
