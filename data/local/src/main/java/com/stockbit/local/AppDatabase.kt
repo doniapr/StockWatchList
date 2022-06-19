@@ -7,14 +7,17 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.stockbit.local.converter.Converters
 import com.stockbit.local.dao.UserDao
+import com.stockbit.local.dao.WatchListDao
 import com.stockbit.model.local.UserEntity
+import com.stockbit.model.local.WatchListEntity
 
-@Database(entities = [UserEntity::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class, WatchListEntity::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDatabase: RoomDatabase() {
 
     // DAO
     abstract fun userDao(): UserDao
+    abstract fun watchlistDao(): WatchListDao
 
     companion object {
 

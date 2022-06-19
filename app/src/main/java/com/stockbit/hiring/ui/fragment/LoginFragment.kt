@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.stockbit.common.base.BaseFragment
 import com.stockbit.common.base.BaseViewModel
+import com.stockbit.hiring.R
 import com.stockbit.hiring.ui.viewmodel.LoginViewModel
 import com.stockbit.hiring.databinding.FragmentLoginBinding
 import org.koin.android.viewmodel.ext.android.sharedViewModel
@@ -31,6 +34,8 @@ class LoginFragment : BaseFragment() {
 
         binding.btnLogin.setOnClickListener {
             viewModel.login(binding.edtUsername.text.toString())
+
+            findNavController().navigate(R.id.action_loginFragment_to_watchListFragment)
         }
     }
 }

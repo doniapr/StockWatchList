@@ -1,7 +1,10 @@
 package com.stockbit.remote.di
 
+import com.stockbit.model.remote.WatchListResponse
 import com.stockbit.remote.ExampleDatasource
 import com.stockbit.remote.ExampleService
+import com.stockbit.remote.watchlist.WatchListDatasource
+import com.stockbit.remote.watchlist.WatchListService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,7 +16,7 @@ fun createRemoteModule(baseUrl: String) = module {
 
     factory<Interceptor> {
         HttpLoggingInterceptor()
-            .setLevel(HttpLoggingInterceptor.Level.HEADERS)
+            .setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
     factory { OkHttpClient.Builder().addInterceptor(get()).build() }
@@ -27,6 +30,8 @@ fun createRemoteModule(baseUrl: String) = module {
     }
 
     factory{ get<Retrofit>().create(ExampleService::class.java) }
+    factory{ get<Retrofit>().create(WatchListService::class.java) }
 
     factory { ExampleDatasource(get()) }
+    factory { WatchListDatasource(get()) }
 }

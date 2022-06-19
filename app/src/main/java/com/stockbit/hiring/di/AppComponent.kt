@@ -5,7 +5,7 @@ import com.stockbit.remote.di.createRemoteModule
 import com.stockbit.repository.di.repositoryModule
 
 val appComponent = listOf(
-    createRemoteModule("https://api.github.com/"),
+    createRemoteModule("https://min-api.cryptocompare.com/data/"),
     repositoryModule,
     localModule,
     useCaseModule,

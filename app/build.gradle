@@ -16,6 +16,8 @@ android {
 }
 
 dependencies {
+    implementation KotlinLibraries.kotlinCoroutineCore
+    implementation AndroidLibraries.kotlinCoroutineAndroid
     // COMMON
     implementation project(Modules.common)
     // DATA modules
